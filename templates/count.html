@@ -1,0 +1,7 @@
+<form id="calculus" method="post" action="">
+    {% csrf_token %}
+    <input type="text" name="x"/ value="{{ x }}"><br/>
+    <input type="text" name="y" value="{{ y }}"/><br/>
+    <input type="submit" value="Count"/>
+</form>
+<h2>Result: {{ result }}</h2><br/>
