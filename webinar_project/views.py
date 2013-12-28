@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
@@ -10,12 +12,13 @@ def count(request):
     result = 0
     if request.POST:
         try:
-            x = int(request.POST['x'])
-            y = int(request.POST['y'])
+            x = unicode(request.POST['x'])
+            # y = int(raw_input())
+            y = unicode(request.POST['y'])
         except (ValueError, KeyError):
             result = 'error'
         else:
-            result = x + y
+            result = u"{} and {} пошли гулять".format(x, y)
 
     context = {
         'x': x,
